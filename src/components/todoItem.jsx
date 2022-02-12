@@ -12,7 +12,7 @@ const TodoItem = (props) => {
 
     useEffect(() => {
         if(isDirty){
-            fetch(`http://localhost:8080/api/todoItems/${todoItem.id}`, {
+            fetch(`https://todo-springboot-application.herokuapp.com/api/todoItems/${todoItem.id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json",
@@ -33,7 +33,7 @@ const TodoItem = (props) => {
     }
 
     function deleteTodo(){
-        fetch(`http://localhost:8080/api/todoItems/${todoItem.id}`, {
+        fetch(`https://todo-springboot-application.herokuapp.com/api/todoItems/${todoItem.id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",

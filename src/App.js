@@ -10,14 +10,14 @@ function App() {
   useEffect(()=> {
 
     if(!todoItems) {
-      fetch('http://localhost:8080/api/todoItems')
+      fetch('https://todo-springboot-application.herokuapp.com/api/todoItems')
         .then(response => response.json())
         .then(data => {
           //console.log(data);
           setTodoItems(data);
         });
 
-        fetch('http://localhost:8080/api/users')
+        fetch('https://todo-springboot-application.herokuapp.com/api/users')
         .then(response => response.json())
         .then(data => {
           //console.log(data);
@@ -27,7 +27,7 @@ function App() {
   }, [todoItems], [users]);
 
   function addNewTodoItem(){
-    fetch(`http://localhost:8080/api/todoItems/`, {
+    fetch(`https://todo-springboot-application.herokuapp.com/api/todoItems/`, {
       method: "POST",
       headers: {
           "content-type": "application/json",
